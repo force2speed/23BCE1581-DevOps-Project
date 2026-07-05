@@ -1,0 +1,50 @@
+# Kubernetes Service Manifest for ABC Technologies Website
+# Exposes the deployment via NodePort
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: abc-tech-website-service
+  namespace: default
+  labels:
+    app: abc-tech-website
+    environment: production
+    tier: frontend
+spec:
+  type: NodePort
+  selector:
+    app: abc-tech-website
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
+---
+# Optional: Ingress resource for external access
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: abc-tech-website-ingress
+  namespace: default
+  labels:
+    app: abc-tech-website
+    environment: production
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: abc-tech.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: abc-tech-website-service
+                port:
+                  number: 80

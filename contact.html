@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ABC Technologies</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">ABC Technologies</a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with our team to discuss your project</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p>Have a question or want to learn more about our services? We'd love to hear from you. Fill out the form or use the contact information below.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">&#128205;</div>
+                                <div class="contact-text">
+                                    <h4>Headquarters</h4>
+                                    <p>123 Tech Boulevard<br>San Francisco, CA 94105<br>United States</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">&#128231;</div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>info@abctech.com<br>support@abctech.com<br>careers@abctech.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">&#128222;</div>
+                                <div class="contact-text">
+                                    <h4>Phone</h4>
+                                    <p>Main: +1 (555) 123-4567<br>Support: +1 (555) 123-4568<br>Fax: +1 (555) 123-4569</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">&#128337;</div>
+                                <div class="contact-text">
+                                    <h4>Business Hours</h4>
+                                    <p>Monday - Friday: 9:00 AM - 6:00 PM PST<br>Saturday: 10:00 AM - 2:00 PM PST<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <h4>Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+                                <a href="#" class="social-icon" aria-label="Twitter">X</a>
+                                <a href="#" class="social-icon" aria-label="GitHub">GH</a>
+                                <a href="#" class="social-icon" aria-label="YouTube">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" name="name" required placeholder="Your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactCompany">Company Name</label>
+                                <input type="text" id="contactCompany" name="company" placeholder="Your company">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Subject *</label>
+                                <select id="contactSubject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="DevOps Services">DevOps Services</option>
+                                    <option value="Cloud Migration">Cloud Migration</option>
+                                    <option value="Software Engineering">Software Engineering</option>
+                                    <option value="Partnership">Partnership Opportunity</option>
+                                    <option value="Support">Technical Support</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactBudget">Estimated Budget</label>
+                                <select id="contactBudget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="<25k">Less than $25,000</option>
+                                    <option value="25k-50k">$25,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="100k-250k">$100,000 - $250,000</option>
+                                    <option value=">250k">More than $250,000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" name="message" rows="5" required placeholder="Tell us about your project or inquiry..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span>Subscribe to our newsletter for industry updates</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                        </form>
+                        <div id="formSuccess" class="form-success hidden">
+                            <div class="success-icon">&#10004;</div>
+                            <h3>Thank You!</h3>
+                            <p>Your message has been sent successfully. We'll get back to you within 24-48 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="offices-section">
+            <div class="container">
+                <h2>Our Global Offices</h2>
+                <div class="offices-grid">
+                    <div class="office-card">
+                        <h3>San Francisco</h3>
+                        <p class="office-address">123 Tech Boulevard<br>San Francisco, CA 94105</p>
+                        <p class="office-contact">+1 (555) 123-4567</p>
+                        <span class="office-type">Headquarters</span>
+                    </div>
+                    <div class="office-card">
+                        <h3>New York</h3>
+                        <p class="office-address">456 Innovation Ave<br>New York, NY 10001</p>
+                        <p class="office-contact">+1 (555) 987-6543</p>
+                        <span class="office-type">East Coast Office</span>
+                    </div>
+                    <div class="office-card">
+                        <h3>London</h3>
+                        <p class="office-address">789 Tech Lane<br>London, EC2A 4NE, UK</p>
+                        <p class="office-contact">+44 20 1234 5678</p>
+                        <span class="office-type">EMEA Office</span>
+                    </div>
+                    <div class="office-card">
+                        <h3>Singapore</h3>
+                        <p class="office-address">101 Cloud Street<br>Singapore 018956</p>
+                        <p class="office-contact">+65 6123 4567</p>
+                        <span class="office-type">APAC Office</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question" tabindex="0">How quickly can you start a project?</h3>
+                        <div class="faq-answer">
+                            <p>Project timelines vary based on scope and complexity. Typically, we can begin within 2-4 weeks of contract signing, with initial assessment and planning starting immediately.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question" tabindex="0">Do you offer ongoing support?</h3>
+                        <div class="faq-answer">
+                            <p>Yes, we offer various support packages including 24/7 monitoring, incident response, and regular maintenance. Support plans can be customized to your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question" tabindex="0">What industries do you serve?</h3>
+                        <div class="faq-answer">
+                            <p>We serve clients across financial services, healthcare, retail, technology, manufacturing, and government sectors. Our solutions are adaptable to various industry requirements.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question" tabindex="0">Can you work with existing teams?</h3>
+                        <div class="faq-answer">
+                            <p>Absolutely. Our model includes embedded engagements where we work alongside your teams, providing both delivery and knowledge transfer for long-term success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>ABC Technologies</h4>
+                    <p>Empowering businesses through innovative technology solutions since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">DevOps Solutions</a></li>
+                        <li><a href="services.html">Cloud Migration</a></li>
+                        <li><a href="services.html">Software Engineering</a></li>
+                        <li><a href="services.html">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>123 Tech Boulevard<br>San Francisco, CA 94105</p>
+                    <p>info@abctech.com<br>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ABC Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
