@@ -1,8 +1,7 @@
-/* ABC Technologies - Corporate Website Styles */
-/* Color System: Blue/Slate Professional Palette */
+
 
 :root {
-    /* Primary Colors */
+
     --primary-900: #0c2d4f;
     --primary-800: #15406a;
     --primary-700: #1e5385;
@@ -14,7 +13,6 @@
     --primary-100: #d4d9f3;
     --primary-50: #eef2fb;
 
-    /* Slate/Neutral Colors */
     --slate-900: #1e293b;
     --slate-800: #2d3b4e;
     --slate-700: #3d4d63;
@@ -26,11 +24,9 @@
     --slate-100: #f1f5f9;
     --slate-50: #f8fafc;
 
-    /* Accent Colors */
     --accent-teal: #0d9488;
     --accent-teal-light: #14b8a6;
 
-    /* Semantic Colors */
     --success: #22c55e;
     --success-light: #dcfce7;
     --warning: #f59e0b;
@@ -38,11 +34,9 @@
     --error: #ef4444;
     --error-light: #fee2e2;
 
-    /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
 
-    /* Spacing */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -56,7 +50,6 @@
     --space-20: 5rem;
     --space-24: 6rem;
 
-    /* Border Radius */
     --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
@@ -64,19 +57,16 @@
     --radius-2xl: 1rem;
     --radius-full: 9999px;
 
-    /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-    /* Transitions */
     --transition-fast: 150ms ease;
     --transition-normal: 250ms ease;
     --transition-slow: 350ms ease;
 }
 
-/* CSS Reset & Base Styles */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -123,7 +113,6 @@ input, textarea, select {
     font-size: inherit;
 }
 
-/* Container */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -131,7 +120,6 @@ input, textarea, select {
     padding: 0 var(--space-6);
 }
 
-/* Header & Navigation */
 .header {
     position: sticky;
     top: 0;
@@ -183,7 +171,6 @@ input, textarea, select {
     background-color: var(--primary-100);
 }
 
-/* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
@@ -218,7 +205,6 @@ input, textarea, select {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -258,7 +244,6 @@ input, textarea, select {
     font-size: 1rem;
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-600) 50%, var(--primary-500) 100%);
     color: #ffffff;
@@ -286,7 +271,6 @@ input, textarea, select {
     line-height: 1.7;
 }
 
-/* Page Header */
 .page-header {
     background: linear-gradient(135deg, var(--slate-800) 0%, var(--primary-800) 100%);
     color: #ffffff;
@@ -305,7 +289,6 @@ input, textarea, select {
     opacity: 0.9;
 }
 
-/* Features Section */
 .features {
     padding: var(--space-20) 0;
     background-color: var(--slate-50);
@@ -357,7 +340,6 @@ input, textarea, select {
     font-size: 0.9375rem;
 }
 
-/* Stats Section */
 .stats {
     padding: var(--space-16) 0;
     background-color: var(--primary-800);
@@ -389,7 +371,6 @@ input, textarea, select {
     font-weight: 500;
 }
 
-/* CTA Section */
 .cta {
     padding: var(--space-16) 0;
     background-color: var(--slate-100);
@@ -409,7 +390,6 @@ input, textarea, select {
     font-size: 1.125rem;
 }
 
-/* Content Sections */
 .content-section {
     padding: var(--space-16) 0;
 }
@@ -442,7 +422,6 @@ input, textarea, select {
     color: var(--slate-600);
 }
 
-/* Timeline Section */
 .timeline-section {
     padding: var(--space-16) 0;
     background-color: var(--slate-50);
@@ -514,7 +493,6 @@ input, textarea, select {
     font-size: 0.9375rem;
 }
 
-/* Values Section */
 .values-section {
     padding: var(--space-16) 0;
 }
@@ -549,7 +527,6 @@ input, textarea, select {
     color: var(--slate-600);
 }
 
-/* Team Section */
 .team-section {
     padding: var(--space-16) 0;
     background-color: var(--slate-50);
@@ -614,7 +591,6 @@ input, textarea, select {
     padding: 0 var(--space-4) var(--space-6);
 }
 
-/* Services Section */
 .services-section {
     padding: var(--space-16) 0;
 }
@@ -759,7 +735,6 @@ input, textarea, select {
     font-size: 0.9375rem;
 }
 
-/* Careers Section */
 .careers-intro {
     padding: var(--space-16) 0;
 }
@@ -780,7 +755,6 @@ input, textarea, select {
     margin-bottom: var(--space-2);
 }
 
-/* Job Listings */
 .job-listings {
     padding: var(--space-16) 0;
     background: var(--slate-50);
@@ -869,7 +843,6 @@ input, textarea, select {
     list-style: disc;
 }
 
-/* Application Form */
 .application-form-section {
     padding: var(--space-16) 0;
 }

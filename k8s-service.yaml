@@ -1,5 +1,4 @@
-# Kubernetes Service Manifest for ABC Technologies Website
-# Exposes the deployment via NodePort
+
 
 apiVersion: v1
 kind: Service
@@ -23,7 +22,7 @@ spec:
   sessionAffinity: None
   externalTrafficPolicy: Cluster
 ---
-# Optional: Ingress resource for external access
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

@@ -1,5 +1,4 @@
-# Kubernetes Deployment Manifest for ABC Technologies Website
-# Deploys 2 replicas of the nginx-based website
+
 
 apiVersion: apps/v1
 kind: Deployment

@@ -1,14 +1,9 @@
-/**
- * ABC Technologies - Main JavaScript
- * Handles interactive elements for the corporate website
- */
 
 import '/styles.css';
 
 (function() {
     'use strict';
 
-    // DOM Ready
     document.addEventListener('DOMContentLoaded', function() {
         initMobileMenu();
         initContactForm();
@@ -19,9 +14,6 @@ import '/styles.css';
         initHeaderScroll();
     });
 
-    /**
-     * Mobile Menu Toggle
-     */
     function initMobileMenu() {
         const menuBtn = document.getElementById('mobileMenuBtn');
         const nav = document.getElementById('nav');
@@ -32,7 +24,6 @@ import '/styles.css';
                 nav.classList.toggle('active');
             });
 
-            // Close menu when clicking a link
             const navLinks = nav.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -41,7 +32,6 @@ import '/styles.css';
                 });
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
                     menuBtn.classList.remove('active');
@@ -50,10 +40,6 @@ import '/styles.css';
             });
         }
     }
-
-    /**
-     * Contact Form Handler
-     */
     function initContactForm() {
         const form = document.getElementById('contactForm');
         const successMessage = document.getElementById('formSuccess');
@@ -61,12 +47,8 @@ import '/styles.css';
         if (form) {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-
-                // Get form data
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData);
-
-                // Validate
                 if (!validateForm(data, ['name', 'email', 'subject', 'message'])) {
                     showAlert('Please fill in all required fields.');
                     return;
@@ -77,10 +59,8 @@ import '/styles.css';
                     return;
                 }
 
-                // Simulate form submission
                 console.log('Contact Form Submission:', data);
 
-                // Show success message
                 form.style.display = 'none';
                 if (successMessage) {
                     successMessage.classList.remove('hidden');
@@ -90,15 +70,10 @@ import '/styles.css';
             });
         }
     }
-
-    /**
-     * Application Form Handler
-     */
     function initApplicationForm() {
         const form = document.getElementById('applicationForm');
 
         if (form) {
-            // Handle apply buttons on job cards
             const applyButtons = document.querySelectorAll('.apply-btn');
             applyButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
@@ -107,7 +82,6 @@ import '/styles.css';
                     if (positionSelect && position) {
                         positionSelect.value = position;
                     }
-                    // Scroll to form
                     const formSection = document.getElementById('application-form');
                     if (formSection) {
                         formSection.scrollIntoView({ behavior: 'smooth' });
@@ -115,14 +89,11 @@ import '/styles.css';
                 });
             });
 
-            // Form submission
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
 
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData);
-
-                // Validate
                 if (!validateForm(data, ['name', 'email', 'position', 'experience'])) {
                     showAlert('Please fill in all required fields.');
                     return;
@@ -132,20 +103,12 @@ import '/styles.css';
                     showAlert('Please enter a valid email address.');
                     return;
                 }
-
-                // Simulate form submission
                 console.log('Application Form Submission:', data);
-
-                // Reset form and show success
                 form.reset();
                 showAlert('Thank you for your application! We have received your submission and will review it shortly.');
             });
         }
     }
-
-    /**
-     * FAQ Accordion
-     */
     function initFAQ() {
         const faqItems = document.querySelectorAll('.faq-item');
 
@@ -154,18 +117,13 @@ import '/styles.css';
 
             if (question) {
                 question.addEventListener('click', function() {
-                    // Close other items
                     faqItems.forEach(other => {
                         if (other !== item && other.classList.contains('active')) {
                             other.classList.remove('active');
                         }
                     });
-
-                    // Toggle current item
                     item.classList.toggle('active');
                 });
-
-                // Keyboard accessibility
                 question.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
@@ -175,10 +133,6 @@ import '/styles.css';
             }
         });
     }
-
-    /**
-     * Gallery with Lightbox and Filters
-     */
     function initGallery() {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
@@ -192,16 +146,12 @@ import '/styles.css';
         let currentIndex = 0;
         let visibleItems = [];
 
-        // Filter functionality
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Update active state
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
                 const filter = btn.getAttribute('data-filter');
-
-                // Filter items
                 galleryItems.forEach(item => {
                     const category = item.getAttribute('data-category');
                     if (filter === 'all' || category === filter) {
@@ -215,18 +165,12 @@ import '/styles.css';
                 updateVisibleItems();
             });
         });
-
-        // Update visible items for lightbox navigation
         function updateVisibleItems() {
             visibleItems = Array.from(galleryItems).filter(item =>
                 item.style.display !== 'none'
             );
         }
-
-        // Initialize visible items
         updateVisibleItems();
-
-        // Lightbox functionality
         if (lightbox) {
             galleryItems.forEach((item, index) => {
                 item.addEventListener('click', function() {
@@ -259,8 +203,6 @@ import '/styles.css';
                     }
                 });
             });
-
-            // Close lightbox
             if (lightboxClose) {
                 lightboxClose.addEventListener('click', closeLightbox);
             }
@@ -270,8 +212,6 @@ import '/styles.css';
                     closeLightbox();
                 }
             });
-
-            // Navigation
             if (lightboxPrev) {
                 lightboxPrev.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -285,8 +225,6 @@ import '/styles.css';
                     navigate(1);
                 });
             }
-
-            // Keyboard navigation
             document.addEventListener('keydown', function(e) {
                 if (!lightbox.classList.contains('active')) return;
 
@@ -329,10 +267,6 @@ import '/styles.css';
             }
         }
     }
-
-    /**
-     * Smooth Scroll for Anchor Links
-     */
     function initSmoothScroll() {
         const links = document.querySelectorAll('a[href^="#"]');
 
@@ -349,10 +283,6 @@ import '/styles.css';
             });
         });
     }
-
-    /**
-     * Header Scroll Effect
-     */
     function initHeaderScroll() {
         const header = document.querySelector('.header');
         let lastScroll = 0;
@@ -371,10 +301,6 @@ import '/styles.css';
             });
         }
     }
-
-    /**
-     * Utility Functions
-     */
     function validateForm(data, requiredFields) {
         return requiredFields.every(field => data[field] && data[field].trim() !== '');
     }
@@ -385,7 +311,6 @@ import '/styles.css';
     }
 
     function showAlert(message) {
-        // Create alert element
         const alert = document.createElement('div');
         alert.className = 'custom-alert';
         alert.innerHTML = `
@@ -394,8 +319,6 @@ import '/styles.css';
                 <button class="alert-close">OK</button>
             </div>
         `;
-
-        // Add styles
         const style = document.createElement('style');
         style.textContent = `
             .custom-alert {
@@ -447,14 +370,11 @@ import '/styles.css';
         document.head.appendChild(style);
         document.body.appendChild(alert);
 
-        // Close on button click
         const closeBtn = alert.querySelector('.alert-close');
         closeBtn.addEventListener('click', function() {
             alert.remove();
             style.remove();
         });
-
-        // Close on background click
         alert.addEventListener('click', function(e) {
             if (e.target === alert) {
                 alert.remove();
